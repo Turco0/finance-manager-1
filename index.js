@@ -48,7 +48,6 @@ document.getElementById('final-balance').innerHTML = saldo;
 
 // Minha receita: Salário
 document.getElementById('earning').innerHTML = textReceita;
-;
 
 // Meus gastos: Alimentação
 document.getElementById('food').innerHTML = textGastos;

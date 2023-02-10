@@ -1,37 +1,92 @@
-var mesAtual = 'janeiro';
-let receita = [{
+//receitas
+let receita = [
+  {
     description: 'Salário',
-    value: 4000
-},
-{
+    value: 4000,
+  },
+  {
     description: 'freela',
-    value: 300
-},];
+    value: 300,
+  },
+];
 
-var gastos = [{
+//gastos
+var gastos = [
+  {
     description: 'Alimentação',
     value: 800,
-},{
-  description: 'gas',
-  value: 120,}
-  ,];
+  },
+  {
+    description: 'gas',
+    value: 120,
+  },
+];
 
-let somaReceita = 0
-let textReceita = ""
+// receitas out
+let somaReceita = 0;
+let textReceita = '';
 
 for (let i = 0; i < receita.length; i++) {
   somaReceita += receita[i].value;
   textReceita += `<li>${receita[i].description}: R$${receita[i].value}</li>`;
 }
 
+// gastos out
 let somaGastos = 0;
-let textGastos = ""
+let textGastos = '';
 
 for (let i = 0; i < gastos.length; i++) {
-textGastos += `<li>${gastos[i].description}: R$${gastos[i].value}</li>`;
-somaGastos += gastos[i].value;
+  textGastos += `<li>${gastos[i].description}: R$${gastos[i].value}</li>`;
+  somaGastos += gastos[i].value;
 }
 
+//mes atual
+
+let mesAtual = new Date().getMonth();
+
+switch (mesAtual) {
+  case 0:
+    mesAtual = 'Janeiro';
+    break;
+  case 1:
+    mesAtual = 'Fevereiro';
+    break;
+  case 2:
+    mesAtual = 'Março';
+    break;
+  case 3:
+    mesAtual = 'Abril';
+    break;
+  case 4:
+    mesAtual = 'Maio';
+    break;
+  case 5:
+    mesAtual = 'Junho';
+    break;
+  case 6:
+    mesAtual = 'Julho';
+    break;
+  case 7:
+    mesAtual = 'Agosto';
+    break;
+  case 8:
+    mesAtual = 'Setembro';
+    break;
+  case 9:
+    mesAtual = 'Outubro';
+    break;
+  case 10:
+    mesAtual = 'Novembro';
+    break;
+  case 11:
+    mesAtual = 'Dezembro';
+    break;
+  default:
+    window.alert('Mês inválido!');
+    break;
+}
+
+//saldo calculado
 let saldo = somaReceita - somaGastos;
 
 // Mês

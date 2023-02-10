@@ -1,46 +1,54 @@
 var mesAtual = 'janeiro';
-var entradas = 8000;
-var saidas = 400;
-var saldo = 1000;
-<<<<<<< HEAD
-var salario = 8000;
-var alimentacao = 8000;
-var receita = [{
+let receita = [{
     description: 'Salário',
-    value: 4000,
-}]
+    value: 4000
+},
+{
+    description: 'freela',
+    value: 300
+},];
+
 var gastos = [{
     description: 'Alimentação',
     value: 800,
-}]
-=======
-var salario = {
-  description: 'Salário',
-  value: 4000,
-};
-var alimentacao = 800;
->>>>>>> 75aed75567fa4c572d528770270484453e6c17b8
+},{
+  description: 'gas',
+  value: 120,}
+  ,];
+
+let somaReceita = 0
+let textReceita = ""
+
+for (let i = 0; i < receita.length; i++) {
+  somaReceita += receita[i].value;
+  textReceita += `<li>${receita[i].description}: R$${receita[i].value}</li>`;
+}
+
+let somaGastos = 0;
+let textGastos = ""
+
+for (let i = 0; i < gastos.length; i++) {
+textGastos += `<li>${gastos[i].description}: R$${gastos[i].value}</li>`;
+somaGastos += gastos[i].value;
+}
+
+let saldo = somaReceita - somaGastos;
 
 // Mês
 document.getElementById('month').innerHTML = mesAtual;
 
 // Entradas
-document.getElementById('total-earnings').innerHTML = entradas;
+document.getElementById('total-earnings').innerHTML = somaReceita;
 
 // Saídas
-document.getElementById('total-expenses').innerHTML = saidas;
+document.getElementById('total-expenses').innerHTML = somaGastos;
 
 // Saldo
 document.getElementById('final-balance').innerHTML = saldo;
 
 // Minha receita: Salário
-<<<<<<< HEAD
-document.getElementById('salary').innerHTML = `${receita[0].description}: R$${receita[0].value}`;
-=======
-document.getElementById(
-  'salary'
-).innerHTML = `${salario.description}: R$ ${salario.value}`;
->>>>>>> 75aed75567fa4c572d528770270484453e6c17b8
+document.getElementById('earning').innerHTML = textReceita;
+;
 
 // Meus gastos: Alimentação
-document.getElementById('food').innerHTML = `${gastos[0].description}: R$${gastos[0].value}`;
+document.getElementById('food').innerHTML = textGastos;

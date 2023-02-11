@@ -41,7 +41,6 @@ for (let i = 0; i < gastos.length; i++) {
 }
 
 //mes atual
-
 let mesAtual = new Date().getMonth();
 
 switch (mesAtual) {
@@ -101,8 +100,8 @@ document.getElementById('total-expenses').innerHTML = somaGastos;
 // Saldo
 document.getElementById('final-balance').innerHTML = saldo;
 
-// Minha receita: Salário
+// Minha receita
 document.getElementById('earning').innerHTML = textReceita;
 
-// Meus gastos: Alimentação
+// Meus gastos
 document.getElementById('food').innerHTML = textGastos;
